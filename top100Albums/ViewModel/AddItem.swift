@@ -52,20 +52,25 @@ extension addItem {
                     // print((jsonResult)!)
                     let feeds = jsonResult?["feed"] as? NSDictionary
                     let results = feeds!["results"] as? NSArray
-                    //let a = results![1] as? NSDictionary
-                   // print(a!["artistName"])
-                    
-//                    let weather = jsonResult?["items"] as? NSArray
+                 
+                 
                     DispatchQueue.main.async {
                         if let count = results?.count {
                             for i in 0...count-1 {
                                 let getArray = results?[i] as? NSDictionary
+                                
+                                
+                                
+//                                print("this is result \(results)")
+                                
                                 //self.titleArray.append(getArray!["title"] as! String)
                                 self.savedArtistNameArray.append(getArray!["artistName"] as! String)
 
                                 self.savedAlbumNameArray.append(getArray!["name"] as! String)
                                 self.savedThumbnailImageUrl.append(getArray!["artworkUrl100"] as! String)
-                               // self.savedGenre.append("artistName")
+                                let getGenre = getArray!["genres"] as? NSArray
+                                let getArray2 = getGenre?[0] as? NSDictionary
+                                self.savedGenre.append(getArray2?.value(forKey: "name") as! String)
                                 self.savedReleaseDate.append(getArray!["releaseDate"] as! String)
                                 self.savedCopyrightInfo.append(getArray!["copyright"] as! String)
                    
@@ -79,12 +84,13 @@ extension addItem {
                         }
                         
                         let item = itemModelArray(savedArtistNameArray: self.savedArtistNameArray, savedAlbumNameArray: self.savedAlbumNameArray, savedThumbnailImageUrl: self.savedThumbnailImageUrl, savedGenre: self.savedGenre, savedReleaseDate: self.savedReleaseDate, savedCopyrightInfo: self.savedCopyrightInfo)
+                        print("this is final genre \(self.savedGenre)")
                     completionHandler(item)
                       
-                      print(item.savedAlbumNameArray)
+                     // print(item.savedAlbumNameArray)
                     }
                 }catch {
-                    print("error in fetching")
+                   // print("error in fetching")
                 }
                 
             }

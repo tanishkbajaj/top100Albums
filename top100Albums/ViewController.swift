@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = "Top 100 Albums"
         a.gettingData(completionHandler: { (item: itemModelArray) -> () in
             DispatchQueue.main.async {
                 print("we are here")
@@ -52,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         })
         
-        
+       
        
     }
     
@@ -81,14 +82,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
     }
+    //let blogSegueIdentifier = "ShowBlogSegue"
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+       
+        print("we are here")
+        let vc2 = DetailItemDescViewController()
+        vc2.addImage(imageName: UIImage(data: NSData(contentsOf: NSURL(string: ThumbnailImageUrl[indexPath.row])! as URL)! as Data)!)
+        vc2.addArtistNameLabel(desc: ArtistNameArray[indexPath.row])
+        vc2.addAlbumNameLabel(desc: AlbumNameArray[indexPath.row])
+        vc2.addGenreNameLabel(desc: Genre[indexPath.row])
+        vc2.addReleaseDateLabel(desc: ReleaseDate[indexPath.row])
+        vc2.addCopyrightInfoLabel(desc: CopyrightInfo[indexPath.row])
+        vc2.ButtonLabel()
+
+        
+        self.navigationController?.pushViewController(vc2, animated: true)
+       
+        
+    }
+   
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height:CGFloat = CGFloat()
         
-        height = 50
+        height = 80
         return height
     }
-
+    
+    
+   
+    
+    
+    // MARK: - Navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if  segue.identifier == blogSegueIdentifier,
+//            let destination = segue.destination as? DetailItemDescViewController,
+//            let blogIndex = tableView.indexPathForSelectedRow?.row
+//        {
+//            // let vc2 = DetailItemDescViewController()
+//            self.navigationController?.present(destination, animated: true, completion: nil)
+//          //  destination.blogName = swiftBlogs[blogIndex]
+//        }
+//    }
+//
     
 
 

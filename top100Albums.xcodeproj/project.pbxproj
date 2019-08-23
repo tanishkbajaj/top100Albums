@@ -15,6 +15,7 @@
 		492E388A230E3E93006C0B15 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3889230E3E93006C0B15 /* ItemModel.swift */; };
 		492E388D230E4AF2006C0B15 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E388C230E4AF1006C0B15 /* AlbumTableViewCell.swift */; };
 		492E388F230E4D4E006C0B15 /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E388E230E4D4D006C0B15 /* AddItem.swift */; };
+		492E3892230F486E006C0B15 /* DetailItemDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E3891230F486E006C0B15 /* DetailItemDescViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		492E3889230E3E93006C0B15 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		492E388C230E4AF1006C0B15 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		492E388E230E4D4D006C0B15 /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
+		492E3891230F486E006C0B15 /* DetailItemDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemDescViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				492E3872230E327B006C0B15 /* AppDelegate.swift */,
 				492E3874230E327B006C0B15 /* ViewController.swift */,
+				492E3891230F486E006C0B15 /* DetailItemDescViewController.swift */,
 				492E3890230E4D57006C0B15 /* ViewModel */,
 				492E388C230E4AF1006C0B15 /* AlbumTableViewCell.swift */,
 				492E388B230E3E99006C0B15 /* Model */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492E3892230F486E006C0B15 /* DetailItemDescViewController.swift in Sources */,
 				492E388D230E4AF2006C0B15 /* AlbumTableViewCell.swift in Sources */,
 				492E3875230E327B006C0B15 /* ViewController.swift in Sources */,
 				492E388F230E4D4E006C0B15 /* AddItem.swift in Sources */,
