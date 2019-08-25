@@ -20,6 +20,7 @@ class addItem {
     var savedGenre: [String]
     var savedReleaseDate: [String]
     var savedCopyrightInfo: [String]
+    var savedAlbumURLData: [String]
     
    
     var url: URL!
@@ -35,6 +36,7 @@ class addItem {
         savedGenre = []
         savedReleaseDate = []
         savedCopyrightInfo = []
+        savedAlbumURLData = []
         
         
     }
@@ -73,17 +75,15 @@ extension addItem {
                                 self.savedGenre.append(getArray2?.value(forKey: "name") as! String)
                                 self.savedReleaseDate.append(getArray!["releaseDate"] as! String)
                                 self.savedCopyrightInfo.append(getArray!["copyright"] as! String)
-                   
-                               
-
-
-                            }
+                                self.savedAlbumURLData.append(getArray!["url"] as! String)
+                   }
                             
-                    
+                    print(self.savedAlbumURLData)
                             
                         }
                         
-                        let item = itemModelArray(savedArtistNameArray: self.savedArtistNameArray, savedAlbumNameArray: self.savedAlbumNameArray, savedThumbnailImageUrl: self.savedThumbnailImageUrl, savedGenre: self.savedGenre, savedReleaseDate: self.savedReleaseDate, savedCopyrightInfo: self.savedCopyrightInfo)
+                        let item = itemModelArray(savedArtistNameArray: self.savedArtistNameArray, savedAlbumNameArray: self.savedAlbumNameArray, savedThumbnailImageUrl: self.savedThumbnailImageUrl, savedGenre: self.savedGenre, savedReleaseDate: self.savedReleaseDate, savedCopyrightInfo: self.savedCopyrightInfo, savedAlbumURLData: self.savedAlbumURLData)
+                        
                         print("this is final genre \(self.savedGenre)")
                     completionHandler(item)
                       

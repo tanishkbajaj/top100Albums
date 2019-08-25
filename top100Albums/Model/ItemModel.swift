@@ -53,6 +53,7 @@ class itemModelArray: NSObject {
     var savedGenre: [String]
     var savedReleaseDate: [String]
     var savedCopyrightInfo: [String]
+    var savedAlbumURLData: [String]
     
     override init() {
         
@@ -63,10 +64,11 @@ class itemModelArray: NSObject {
         savedGenre = []
         savedReleaseDate = []
         savedCopyrightInfo = []
+        savedAlbumURLData = []
         
     }
     
-    init(savedArtistNameArray: [String], savedAlbumNameArray: [String], savedThumbnailImageUrl: [String], savedGenre: [String], savedReleaseDate: [String], savedCopyrightInfo: [String]) {
+    init(savedArtistNameArray: [String], savedAlbumNameArray: [String], savedThumbnailImageUrl: [String], savedGenre: [String], savedReleaseDate: [String], savedCopyrightInfo: [String], savedAlbumURLData: [String]) {
         
         self.savedArtistNameArray = savedArtistNameArray
         self.savedAlbumNameArray = savedAlbumNameArray
@@ -74,6 +76,7 @@ class itemModelArray: NSObject {
         self.savedGenre = savedGenre
         self.savedReleaseDate = savedReleaseDate
         self.savedCopyrightInfo = savedCopyrightInfo
+        self.savedAlbumURLData = savedAlbumURLData
         
     }
     

@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var Genre: [String] = []
     var ReleaseDate: [String] = []
     var CopyrightInfo: [String] = []
+    var URLAlbumData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.Genre = item.savedGenre
                 self.ReleaseDate = item.savedReleaseDate
                 self.CopyrightInfo = item.savedCopyrightInfo
+                self.URLAlbumData = item.savedAlbumURLData
                 
                 self.tableView = UITableView(frame: self.view.bounds, style: UITableView.Style.plain)
                 self.tableView.dataSource = self
@@ -96,6 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc2.addGenreNameLabel(desc: Genre[indexPath.row])
         vc2.addReleaseDateLabel(desc: ReleaseDate[indexPath.row])
         vc2.addCopyrightInfoLabel(desc: CopyrightInfo[indexPath.row])
+        vc2.urlToDisp =  URLAlbumData[indexPath.row]
         vc2.ButtonLabel()
 
         

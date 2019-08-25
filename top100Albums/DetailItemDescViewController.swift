@@ -12,6 +12,7 @@ class DetailItemDescViewController: UIViewController {
     
     var views: UIView!
     //let imageName = "yourImage.png"
+    var urlToDisp = ""
    
 
     override func viewDidLoad() {
@@ -82,30 +83,29 @@ class DetailItemDescViewController: UIViewController {
     func addCopyrightInfoLabel(desc: String) {
         
         let label = UILabel(frame: CGRect(x: 10, y: 550, width: 350, height: 21))
-        label.textAlignment = .center
         label.text = desc
+        label.textAlignment = .center
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
-        label.numberOfLines = 2
+       label.sizeToFit()
         self.view.addSubview(label)
         
     }
     
     func ButtonLabel() {
-        
-        
         let button = UIButton()
-        button.frame = CGRect(x: 120, y: 600, width: 130, height: 80)
+        button.frame = CGRect(x: 120, y: 800, width: 130, height: 80)
         button.backgroundColor = UIColor.red
         button.setTitle("Show on iTunes", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         self.view.addSubview(button)
-        
-
-        
     }
     
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
+        let webViewController = WebViewController()
+        webViewController.UrlToDisplay = urlToDisp
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
     
     
