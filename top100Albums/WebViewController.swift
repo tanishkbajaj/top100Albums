@@ -9,25 +9,29 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
-    var webView: WKWebView!
+class WebViewController: UIViewController{
+    //var webView: WKWebView!
     var UrlToDisplay = ""
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self as? WKUIDelegate
-        view = webView
-    }
+//    override func loadView() {
+//        let webConfiguration = WKWebViewConfiguration()
+//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+//        webView.uiDelegate = self as? WKUIDelegate
+//        view = webView
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let webV    = UIWebView()
-        webV.frame  = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        print(UrlToDisplay)
-        webV.loadRequest(NSURLRequest(url: NSURL(string: UrlToDisplay)! as URL) as URLRequest)
-        webV.delegate = self as? UIWebViewDelegate
-        self.view.addSubview(webV)
+        if let url = URL(string: UrlToDisplay),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:])
+        }
+//        let webV    = UIWebView()
+//        webV.frame  = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//        print(UrlToDisplay)
+//        webV.loadRequest(NSURLRequest(url: NSURL(string: "https://www.google.com")! as URL) as URLRequest)
+//        webV.delegate = self as? UIWebViewDelegate
+//        self.view.addSubview(webV)
         
        
       //  openAppStore()
