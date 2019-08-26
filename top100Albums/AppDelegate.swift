@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  top100Albums
 //
-//  Created by IMCS2 on 8/21/19.
-//  Copyright © 2019 Tanishk. All rights reserved.
+//  Created by IMCS2 on 8/24/19.
+//  Copyright © 2019 Tanishk Bajaj. All rights reserved.
 //
 
 import UIKit
@@ -15,10 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigationController: UINavigationController?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        
         if let window = window {
             let mainVC = ViewController()
             navigationController = UINavigationController(rootViewController: mainVC)

@@ -2,48 +2,13 @@
 //  ItemModel.swift
 //  top100Albums
 //
-//  Created by IMCS2 on 8/21/19.
-//  Copyright © 2019 Tanishk. All rights reserved.
+//  Created by IMCS2 on 8/24/19.
+//  Copyright © 2019 Tanishk Bajaj. All rights reserved.
 //
 
 import Foundation
 
-struct itemModel {
-    
-    var albumName: String
-    var artistName: String
-    var thumbnailImageUrl: String
-    var genre: String
-    var releaseDate: String
-    var copyrightInfo: String
-    
-    init() {
-        
-        albumName = ""
-        artistName = ""
-         thumbnailImageUrl = ""
-         genre = ""
-         releaseDate = ""
-         copyrightInfo = ""
-        
-    }
-    
-    init(albumName: String, artistName: String, thumbnailImageUrl: String, genre: String, releaseDate: String, copyrightInfo: String) {
-        
-        self.albumName = albumName
-        self.artistName = artistName
-        self.thumbnailImageUrl = thumbnailImageUrl
-        self.genre = genre
-        self.releaseDate = releaseDate
-        self.copyrightInfo = copyrightInfo
-        
-    }
 
-    
-    
-    
-    
-}
 
 class itemModelArray: NSObject {
     
@@ -57,7 +22,7 @@ class itemModelArray: NSObject {
     
     override init() {
         
-       
+        
         savedArtistNameArray = []
         savedAlbumNameArray = []
         savedThumbnailImageUrl = []
